@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя пробная страница</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container {
+            background: #161b22;
+            padding: 40px 60px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            border: 1px solid #30363d;
+        }
+        h1 {
+            color: #58a6ff;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin: 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #238636;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 16px;
+        }
+        .footer {
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: #484f58;
+        }
+        button {
+            background: #238636;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #2ea043;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 GitHub Pages работает!</h1>
+        <p>Это ваш первый сайт, размещённый бесплатно.</p>
+        <p>📁 Репозиторий: <strong>rbxfreevalue</strong></p>
+        <span class="badge">✅ Активен</span>
+
+        <button id="actionBtn">Нажми меня</button>
+
+        <div class="footer">
+            ⚡ Работает через GitHub Pages &bull; HTTPS включён
+        </div>
+    </div>
+
+    <script>
+        // Обычный JS для демонстрации
+        document.getElementById('actionBtn').addEventListener('click', function() {
+            alert('Привет! Это твой первый скрипт на GitHub Pages.');
+        });
+
+        // Поддержка Telegram Web App (если открыто внутри Telegram)
+        if (window.Telegram && window.Telegram.WebApp) {
+            const tg = window.Telegram.WebApp;
+            tg.ready(); // сигнал, что приложение загружено
+            tg.MainButton.setText('Отправить данные');
+            tg.MainButton.onClick(function() {
+                tg.sendData(JSON.stringify({ action: 'hello_from_github' }));
+            });
+            tg.MainButton.show();
+        }
+    </script>
+
+</body>
+</html>
